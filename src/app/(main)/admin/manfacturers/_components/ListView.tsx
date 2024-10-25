@@ -121,15 +121,16 @@ const ListView = ({ initialData }: ManufacturerProps) => {
                     icon='pi pi-pencil'
                     rounded
                     outlined
-                    className='mr-2'
+                    className='mx-2'
                     onClick={() => editManufacturer(rowData)}
                 />
                 <Button
                     icon='pi pi-trash'
                     rounded
                     outlined
+                    className='mx-2'
                     severity='danger'
-                    // onClick={() => confirmDeleteProduct(rowData)}
+                // onClick={() => confirmDeleteProduct(rowData)}
                 />
             </>
         )
@@ -181,23 +182,33 @@ const ListView = ({ initialData }: ManufacturerProps) => {
                 >
                     <Column
                         selectionMode='multiple'
-                        headerStyle={{
-                            width: '4rem'
-                        }}
+                        style={
+                            {
+                                width: '20px'
+                            }}
                     ></Column>
                     <Column
                         field='name'
                         header='Name'
                         sortable
-                        headerStyle={{
-                            minWidth: '4rem'
-                        }}
+                        style={
+                            {
+                                width: '80px'
+                            }}
                     />
-                    <Column field='description' header='Description' />
+                    <Column field='description' header='Description'
+                        style={
+                            {
+                                maxWidth: '180px',
+                                textOverflow: 'ellipsis',
+                            }
+                        }
+                    />
                     <Column
+                        header='Actions'
                         body={actionBodyTemplate}
                         style={{
-                            maxWidth: '30px'
+                            width: '50px',
                         }}
                     ></Column>
                 </DataTable>
